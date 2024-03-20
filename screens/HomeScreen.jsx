@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
-    const navigation = useNavigation(true);
+  const navigation = useNavigation(true);
   const [formData, setFormData] = useAtom(formDataAtom);
   const handleChange = (field, value) => {
     setFormData((prevData) => ({ ...prevData, [field]: value }));
@@ -15,15 +15,9 @@ const Home = () => {
     console.log("The form Data is:", formData);
   };
   return (
-    <View
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        flex: 1,
-      }}
-    >
+    <View style={styles.container}>
       <TextInput
-       placeholder="First Name"
+        placeholder="First Name"
         value={formData.firstName}
         onChangeText={(text) => handleChange("firstName", text)}
       />
@@ -49,3 +43,11 @@ const Home = () => {
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+});
