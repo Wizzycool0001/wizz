@@ -6,7 +6,7 @@ import Onboarding_3 from "./components/Onboarding_3";
 import Onboarding_1 from "./components/Onboarding-1";
 import Location from "./components/Location";
 import { NavigationContainer } from "@react-navigation/native";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Getstarted from "./components/Getstarted";
 import LocationPermit from "./components/LocationPermit";
 import Test from "./components/Test";
@@ -21,13 +21,14 @@ import AboutScreen from "./screens/AboutScreen";
 import ServiceScreen from "./screens/ServiceScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import Thefirst from "./Ehail/Thefirst";
-import { createDrawerNavigator} from '@react-navigation/drawer';
+// import { createDrawerNavigator} from '@react-navigation/drawer';
 // const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
+// const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 const app = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Stack.Navigator>
        {/* <Stack.Screen name="Duolingo" component={Duolingo} options={{ headerShown: false }} /> */}
        {/* <Tab.Screen name="LocationPermit" component={LocationPermit} options={{headerShown: false}}/>
         <Tab.Screen name="Onboarding-1" component={Onboarding_1} options={{ headerShown: false }} />
@@ -43,8 +44,8 @@ const app = () => {
         <Drawer.Screen name="About" component={AboutScreen} options={{ headerShown: false }} />
         <Drawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
         <Drawer.Screen name="Service" component={ServiceScreen} options={{ headerShown: false }} /> */}
-        <Drawer.Screen name="First" component={Thefirst} options={{ headerShown: false }} />
-      </Drawer.Navigator>
+        <Stack.Screen name="First" component={Thefirst} options={{ headerShown: false }} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
