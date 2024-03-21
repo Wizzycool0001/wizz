@@ -15,10 +15,12 @@ import OtpDone from "./components/OtpDone";
 import Login from "./components/Login";
 import LoginPhone from "./components/LoginPhone";
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomSheet } from '@gorhom/bottom-sheet';
 import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
 import ServiceScreen from "./screens/ServiceScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import Thefirst from "./Ehail/Thefirst";
 import { createDrawerNavigator} from '@react-navigation/drawer';
 // const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -37,10 +39,11 @@ const app = () => {
         <Tab.Screen name="OtpDone" component={OtpDone} options={{ headerShown: false }} />
         <Tab.Screen name="Login" component={Login} options={{ headerShown: false }} />  */}
         {/* <Stack.Screen name="LoginPhone" component={LoginPhone} options={{ headerShown: false }} /> */}
-        <Drawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        {/* <Drawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Drawer.Screen name="About" component={AboutScreen} options={{ headerShown: false }} />
         <Drawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
-        <Drawer.Screen name="Service" component={ServiceScreen} options={{ headerShown: false }} />
+        <Drawer.Screen name="Service" component={ServiceScreen} options={{ headerShown: false }} /> */}
+        <Drawer.Screen name="First" component={Thefirst} options={{ headerShown: false }} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
